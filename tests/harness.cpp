@@ -10,7 +10,7 @@
 #include "eEVM/util.h"
 
 #include <doctest/doctest.h>
-#include <fmt/format_header_only.h>
+#include <fmt/format.h>
 #include <fstream>
 #include <nlohmann/json.hpp>
 

@@ -5,7 +5,7 @@
 #include <boost/endian/conversion.hpp>
 #include <boost/functional/hash/hash.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
-#include <fmt/format_header_only.h>
+#include <fmt/format.h>
 #include <limits>
 #include <nlohmann/json.hpp>
 #include <sstream>

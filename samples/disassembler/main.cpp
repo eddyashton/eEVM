@@ -3,7 +3,7 @@
 
 #include "eEVM/disassembler.h"
 
-#include <fmt/format_header_only.h>
+#include <fmt/format.h>
 #include <iostream>
 
 int usage(const char* bin_name)

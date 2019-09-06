@@ -5,7 +5,7 @@
 #include "eEVM/processor.h"
 #include "eEVM/simple/simpleglobalstate.h"
 
-#include <fmt/format_header_only.h>
+#include <fmt/format.h>
 #include <iostream>
 
 std::vector<uint8_t> create_bytecode(const std::string& s)
