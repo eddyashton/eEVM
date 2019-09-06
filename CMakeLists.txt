@@ -6,32 +6,64 @@ set(CMAKE_CXX_STANDARD 17)
 
 cmake_policy(SET CMP0076 NEW)
 
-set(Boost_ADDITIONAL_VERSIONS "1.67" "1.67.0")
-find_package(Boost 1.60.0 REQUIRED)
-
+add_subdirectory(3rdparty/doctest)
 add_subdirectory(3rdparty/fmt)
+add_subdirectory(3rdparty/keccak)
 add_subdirectory(3rdparty/nlohmann)
 
+add_subdirectory(core)
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# eevm_core library
+#add_library(eevm_simple SHARED)
+
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-add_library(eevm_core STATIC)
-
-target_include_directories(eevm_core
-  PUBLIC
-    include
-    ${Boost_INCLUDE_DIR}
+add_executable(disassembler
+  samples/disassembler/main.cpp
 )
 
-target_sources(eevm_core
-  PUBLIC
-    src/processor.cpp
-    src/stack.cpp
-    src/transaction.cpp
-    src/util.cpp
+target_link_libraries(disassembler
+  eevm::core
 )
 
-target_link_libraries(eevm_core
-  fmt::fmt-header-only
-  nlohmann_json::nlohmann_json
-)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#add_executable(hello_world
+#  samples/hello_world/main.cpp
+#)
+#
+#target_link_libraries(hello_world
+#  eevm::core
+#)
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# eevm_tests executable
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+## Adds BUILD_TESTING option
+#include(CTest)
+#
+#if(BUILD_TESTING)
+#  add_executable(eevm_tests
+#    tests/harness.cpp
+#    tests/main.cpp
+#    tests/rlp.cpp
+#  )
+#
+#  target_link_libraries(eevm_tests
+#    eevm::core
+#    doctest::doctest
+#  )
+#endif()
+#
+#add_test(
+#  NAME eevm_tests
+#  COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/unit_test_wrapper.sh eevm_tests
+#)
+#
+#if(NOT ENV{TEST_DIR}) 
+#  set_tests_properties(eevm_tests
+#    PROPERTIES
+#      ENVIRONMENT TEST_DIR=${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/test_cases
+#  )
+#endif()

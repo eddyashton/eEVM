@@ -5,7 +5,7 @@
 
 extern "C"
 {
-#include "../3rdparty/keccak/KeccakHash.h"
+#include "keccak/KeccakHash.h"
 }
 #include "address.h"
 
