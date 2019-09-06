@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-#include "eEVM/simple/simpleaccount.h"
+#include "simple/simpleaccount.h"
 
 #include "eEVM/util.h"
 

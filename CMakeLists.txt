@@ -12,6 +12,7 @@ add_subdirectory(3rdparty/keccak)
 add_subdirectory(3rdparty/nlohmann)
 
 add_subdirectory(core)
+add_subdirectory(simple)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #add_library(eevm_simple SHARED)

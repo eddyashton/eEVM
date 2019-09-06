@@ -4,8 +4,8 @@
 #pragma once
 
 #include "eEVM/globalstate.h"
-#include "eEVM/simple/simpleaccount.h"
-#include "eEVM/simple/simplestorage.h"
+#include "simple/simpleaccount.h"
+#include "simple/simplestorage.h"
 
 namespace eevm
 {
