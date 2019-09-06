@@ -22,48 +22,6 @@ add_subdirectory(samples/erc20)
 add_subdirectory(samples/hello_world)
 add_subdirectory(samples/sum)
 
-#add_subdirectory(tests)
-
-# Tests TODO
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#add_executable(hello_world
-#  samples/hello_world/main.cpp
-#)
-#
-#target_link_libraries(hello_world
-#  eevm::core
-#)
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# eevm_tests executable
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-## Adds BUILD_TESTING option
-#include(CTest)
-#
-#if(BUILD_TESTING)
-#  add_executable(eevm_tests
-#    tests/harness.cpp
-#    tests/main.cpp
-#    tests/rlp.cpp
-#  )
-#
-#  target_link_libraries(eevm_tests
-#    eevm::core
-#    doctest::doctest
-#  )
-#endif()
-#
-#add_test(
-#  NAME eevm_tests
-#  COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/tests/unit_test_wrapper.sh eevm_tests
-#)
-#
-#if(NOT ENV{TEST_DIR}) 
-#  set_tests_properties(eevm_tests
-#    PROPERTIES
-#      ENVIRONMENT TEST_DIR=${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/test_cases
-#  )
-#endif()
+# Tests
+enable_testing()
+add_subdirectory(tests)

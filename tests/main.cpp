@@ -5,9 +5,9 @@
 #include "eEVM/disassembler.h"
 #include "eEVM/opcode.h"
 #include "eEVM/processor.h"
-#include "eEVM/simple/simpleaccount.h"
-#include "eEVM/simple/simpleglobalstate.h"
 #include "eEVM/util.h"
+#include "simple/simpleaccount.h"
+#include "simple/simpleglobalstate.h"
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include <doctest/doctest.h>

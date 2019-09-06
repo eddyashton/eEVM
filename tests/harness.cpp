@@ -5,9 +5,9 @@
 #include "eEVM/opcode.h"
 #include "eEVM/processor.h"
 #include "eEVM/rlp.h"
-#include "eEVM/simple/simpleglobalstate.h"
-#include "eEVM/simple/simplestorage.h"
 #include "eEVM/util.h"
+#include "simple/simpleglobalstate.h"
+#include "simple/simplestorage.h"
 
 #include <doctest/doctest.h>
 #include <fmt/format.h>
