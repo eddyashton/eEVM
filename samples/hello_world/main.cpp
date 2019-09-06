@@ -3,7 +3,7 @@
 
 #include "eEVM/opcode.h"
 #include "eEVM/processor.h"
-#include "eEVM/simple/simpleglobalstate.h"
+#include "simple/simpleglobalstate.h"
 
 #include <fmt/format.h>
 #include <iostream>

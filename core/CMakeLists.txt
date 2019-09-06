@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-
 project(eevm_core)
 
 set(Boost_ADDITIONAL_VERSIONS "1.67" "1.67.0")

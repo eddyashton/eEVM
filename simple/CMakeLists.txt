@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-
 project(eevm_simple)
 
 add_library(${PROJECT_NAME} SHARED)

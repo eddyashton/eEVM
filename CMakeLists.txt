@@ -6,26 +6,25 @@ set(CMAKE_CXX_STANDARD 17)
 
 cmake_policy(SET CMP0076 NEW)
 
+# Vendored dependencies
 add_subdirectory(3rdparty/doctest)
 add_subdirectory(3rdparty/fmt)
 add_subdirectory(3rdparty/keccak)
 add_subdirectory(3rdparty/nlohmann)
 
+# Core libraries
 add_subdirectory(core)
 add_subdirectory(simple)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#add_library(eevm_simple SHARED)
+# Samples
+add_subdirectory(samples/disassembler)
+add_subdirectory(samples/erc20)
+add_subdirectory(samples/hello_world)
+add_subdirectory(samples/sum)
 
+#add_subdirectory(tests)
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-add_executable(disassembler
-  samples/disassembler/main.cpp
-)
-
-target_link_libraries(disassembler
-  eevm::core
-)
+# Tests TODO
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
