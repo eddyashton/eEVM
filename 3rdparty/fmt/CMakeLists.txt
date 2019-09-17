@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 
 project(fmt)
 
-add_library(fmt-header-only INTERFACE)
-add_library(fmt::fmt-header-only ALIAS fmt-header-only)
+add_library(fmt_header_only INTERFACE)
+add_library(fmt::fmt_header_only ALIAS fmt_header_only)
 
-target_compile_definitions(fmt-header-only INTERFACE FMT_HEADER_ONLY=1)
+target_compile_definitions(fmt_header_only INTERFACE FMT_HEADER_ONLY=1)
 
-target_include_directories(fmt-header-only INTERFACE
+target_include_directories(fmt_header_only INTERFACE
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
 )

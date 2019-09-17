@@ -23,7 +23,7 @@ target_sources(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   INTERFACE
-    fmt::fmt-header-only
+    fmt::fmt_header_only
     keccak::keccak
     nlohmann_json::nlohmann_json
 )
