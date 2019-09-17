@@ -6,7 +6,7 @@ file(GLOB KECCAK_SOURCES
   keccak/*.c
 )
 
-add_library(keccak SHARED
+add_library(keccak STATIC
   ${KECCAK_SOURCES}
 )
 add_library(keccak::keccak ALIAS keccak)
