@@ -1236,14 +1236,14 @@ namespace eevm
       // TODO: Work out why this fails the test cases
       // ctxt->acc.increment_nonce();
 
-      decltype(auto) newAcc = gs.create(newAddress, contractValue, {});
+      auto newAcc = gs.create(newAddress, contractValue, initCode);
 
       // In contract creation, the transaction value is an endowment for the
       // newly created account
       ctxt->acc.pay_to(newAcc.acc, contractValue);
 
       auto parentContext = ctxt;
-      auto rh = [&newAcc, parentContext](vector<uint8_t> output) {
+      auto rh = [newAcc, parentContext](vector<uint8_t> output) {
         newAcc.acc.set_code(move(output));
         parentContext->s.push(newAcc.acc.get_address());
       };
